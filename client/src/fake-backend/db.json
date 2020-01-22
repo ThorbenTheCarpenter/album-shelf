@@ -1,0 +1,64 @@
+{
+  "albums": [
+    {
+      "artist": "Billy Joel",
+      "title": "The Stranger",
+      "image": "/uploads/Choose File",
+      "tracks": [
+        "sfafaf"
+      ],
+      "id": 1
+    },
+    {
+      "artist": "Elton John",
+      "title": "Madman Across the Water",
+      "description": "la la laaaaaaaaaaa",
+      "image": "https://ecsmedia.pl/c/madman-across-the-water-w-iext46069913.jpg",
+      "year": "1980",
+      "tracks": [
+        "Daniel ",
+        "Madman Across The Water "
+      ],
+      "id": 2
+    },
+    {
+      "artist": "Ozzy Osbourne",
+      "title": "Blizzard of Ozz",
+      "description": "",
+      "image": "/uploads/small_ozzy-osbourne-Blizzard-ofOzz_3573.jpg",
+      "tracks": [
+        ""
+      ],
+      "id": 3
+    },
+    {
+      "artist": "Pink Floyd",
+      "title": "The Wall",
+      "description": "Pinky!",
+      "image": "https://ecsmedia.pl/c/the-wall-w-iext47067868.jpg",
+      "year": "1977",
+      "tracks": [
+        ""
+      ],
+      "id": 4
+    },
+    {
+      "artist": "Ozzy Osbourne",
+      "title": "Bark at the Moon",
+      "description": "",
+      "image": "/uploads/3.BarkattheMoon.jpg",
+      "year": "",
+      "tracks": [],
+      "id": 5
+    },
+    {
+      "artist": "Judas Priest",
+      "title": "Screaming for Vengance",
+      "description": "",
+      "image": "/uploads/i-judas-priest-screaming-for-vengeance-winyl.jpg",
+      "year": "",
+      "tracks": [],
+      "id": 6
+    }
+  ]
+}

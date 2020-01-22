@@ -1,0 +1,240 @@
+body {
+  background: white;
+  margin: 30px;
+}
+
+//header
+.addDiv {
+.add {
+  height: 80px;
+  width: 80px;
+  transform: translate(-20px, -112px);
+  font-size: 90px;
+  font-weight: bolder;
+  border: none;
+  background: white;
+  float: right;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  cursor: pointer;
+}
+}
+
+
+.search {
+  transform: translate(-100px, -65px);
+  height: 55px;
+  width: 55px;
+  position: absolute;
+  cursor: pointer;
+  position: absolute;
+}
+
+.searchBar {
+  position: absolute;
+  position: absolute;
+  font-size: larger;
+  height: 50px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  transform: translate(-270px, -65px);
+  text-align: center;
+  border: black solid 3px;
+}
+
+.search:hover {
+  background: rgb(219, 211, 211);
+}
+
+.editModeButton {
+  position: absolute;
+  height: 70px;
+  width: 70px;
+  cursor: pointer;
+  transform: translate(0, -80px);
+}
+
+.editModeButton:hover {
+  background: rgb(219, 211, 211);
+}
+
+.buttons {
+  float: right;
+}
+
+h1 {
+  text-align: center;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.bottom {
+  width: 100%;
+  margin-bottom: 0px;
+  border-bottom: 2px black solid;
+  // position: absolute;
+}
+
+
+// Object form
+
+.textinput {
+  width: 50%;
+  height: 35px;
+  margin-bottom: 3px;
+  margin-top: 8px;
+  margin-left: 1%;
+  color: rgb(238, 95, 119);
+  cursor: auto;
+  border: black solid 3px;
+  border-radius: 20px;
+  font-size: large;
+  padding: 5px;
+}
+
+textarea {
+  width: 50%;
+  height: 75px;
+  margin-bottom: 3px;
+  margin-top: 8px;
+  margin-left: 1%;
+  color: rgb(238, 95, 119);
+  cursor: auto;
+  border: black solid 3px;
+  font-size: large;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+label {
+  display: table-row;
+  font-size: large;
+}
+
+.submitbutton {
+  margin-left: 5%;
+  margin-top: 5%;
+  height: 50px;
+  width: 120px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: large;
+  color: white;
+  border-radius: 20px;
+  border: 0px solid white;
+  background-color: rgb(245, 137, 155);
+  cursor: pointer;
+}
+.submitbutton:hover {
+  background: red;
+}
+
+// vinyl
+
+$main_vinyl: 286px;
+$middle_part: 30%;
+$button: 20%;
+$vis: hidden;
+
+.main_box {
+  // t r b l
+  margin: 50px 0px 170px 55px;
+  position: relative;
+  display: inline-block;
+
+  .vinyl {
+    cursor: pointer;
+    margin-top: 50px;
+    background: black;
+    height: $main_vinyl;
+    width: $main_vinyl;
+    border-radius: 50%;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .infobutton {
+    visibility: hidden;
+  }
+
+  .vinyl:hover {
+    transform: translate3d(0, -100px, 0px);
+    .infobutton {
+      margin: 0 auto;
+      position: relative;
+      top: 35%;
+      left: 35%;
+      border-radius: 50%;
+      height: $button;
+      width: $button;
+      visibility: visible;
+    }
+  }
+
+  .middle_circle {
+    height: $middle_part;
+    width: $middle_part;
+    background: white;
+    border-radius: 50%;
+    margin: 0 auto;
+    position: relative;
+    top: 35%;
+  }
+
+  .empty {
+    width: $main_vinyl;
+    height: $main_vinyl;
+    transform: translate3d(0px, -143px, 0px);
+    position: absolute;
+    background: rgb(255, 233, 233);
+    font-size: 70px;
+    text-align: center;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+
+    .album_image {
+      cursor: pointer;
+      width: $main_vinyl;
+      height: $main_vinyl;
+    }
+  }
+
+  .titles {
+    transform: translate(0, 146px);
+    text-align: center;
+    font-size: large;
+  }
+  .artist {
+    font-size: 20px;
+  }
+  
+}
+
+.buttondiv {
+  position: relative;
+  transform: translate(0, 36px);
+
+  .delbutton{
+    height: 50px;
+    width:  50px;
+    background: red;
+    border: none;
+    float: left;
+
+    .delIcon{
+      height: 40px;
+      width:  40px;
+      transform: translate(-4px, 0);
+    }
+  }
+
+  .editbutton {
+    float: right;
+    height: 50px;
+    width:  50px;
+    background: green;
+    border: none;
+
+    .editIcon{
+      height: 40px;
+      width:  40px;
+      transform: translate(-4px, 0);
+    }
+  }
+}
+
+

@@ -1,0 +1,238 @@
+body {
+  background: white;
+  margin: 30px;
+}
+
+.addDiv .add {
+  height: 80px;
+  width: 80px;
+  -webkit-transform: translate(-20px, -112px);
+          transform: translate(-20px, -112px);
+  font-size: 90px;
+  font-weight: bolder;
+  border: none;
+  background: white;
+  float: right;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  cursor: pointer;
+}
+
+.search {
+  -webkit-transform: translate(-100px, -65px);
+          transform: translate(-100px, -65px);
+  height: 55px;
+  width: 55px;
+  position: absolute;
+  cursor: pointer;
+  position: absolute;
+}
+
+.searchBar {
+  position: absolute;
+  position: absolute;
+  font-size: larger;
+  height: 50px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  -webkit-transform: translate(-270px, -65px);
+          transform: translate(-270px, -65px);
+  text-align: center;
+  border: black solid 3px;
+}
+
+.search:hover {
+  background: #dbd3d3;
+}
+
+.editModeButton {
+  position: absolute;
+  height: 70px;
+  width: 70px;
+  cursor: pointer;
+  -webkit-transform: translate(0, -80px);
+          transform: translate(0, -80px);
+}
+
+.editModeButton:hover {
+  background: #dbd3d3;
+}
+
+.buttons {
+  float: right;
+}
+
+h1 {
+  text-align: center;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.bottom {
+  width: 100%;
+  margin-bottom: 0px;
+  border-bottom: 2px black solid;
+}
+
+.textinput {
+  width: 50%;
+  height: 35px;
+  margin-bottom: 3px;
+  margin-top: 8px;
+  margin-left: 1%;
+  color: #ee5f77;
+  cursor: auto;
+  border: black solid 3px;
+  border-radius: 20px;
+  font-size: large;
+  padding: 5px;
+}
+
+textarea {
+  width: 50%;
+  height: 75px;
+  margin-bottom: 3px;
+  margin-top: 8px;
+  margin-left: 1%;
+  color: #ee5f77;
+  cursor: auto;
+  border: black solid 3px;
+  font-size: large;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+label {
+  display: table-row;
+  font-size: large;
+}
+
+.submitbutton {
+  margin-left: 5%;
+  margin-top: 5%;
+  height: 50px;
+  width: 120px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: large;
+  color: white;
+  border-radius: 20px;
+  border: 0px solid white;
+  background-color: #f5899b;
+  cursor: pointer;
+}
+
+.submitbutton:hover {
+  background: red;
+}
+
+.main_box {
+  margin: 50px 0px 170px 55px;
+  position: relative;
+  display: inline-block;
+}
+
+.main_box .vinyl {
+  cursor: pointer;
+  margin-top: 50px;
+  background: black;
+  height: 286px;
+  width: 286px;
+  border-radius: 50%;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  transition: -webkit-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+}
+
+.main_box .infobutton {
+  visibility: hidden;
+}
+
+.main_box .vinyl:hover {
+  -webkit-transform: translate3d(0, -100px, 0px);
+          transform: translate3d(0, -100px, 0px);
+}
+
+.main_box .vinyl:hover .infobutton {
+  margin: 0 auto;
+  position: relative;
+  top: 35%;
+  left: 35%;
+  border-radius: 50%;
+  height: 20%;
+  width: 20%;
+  visibility: visible;
+}
+
+.main_box .middle_circle {
+  height: 30%;
+  width: 30%;
+  background: white;
+  border-radius: 50%;
+  margin: 0 auto;
+  position: relative;
+  top: 35%;
+}
+
+.main_box .empty {
+  width: 286px;
+  height: 286px;
+  -webkit-transform: translate3d(0px, -143px, 0px);
+          transform: translate3d(0px, -143px, 0px);
+  position: absolute;
+  background: #ffe9e9;
+  font-size: 70px;
+  text-align: center;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+.main_box .empty .album_image {
+  cursor: pointer;
+  width: 286px;
+  height: 286px;
+}
+
+.main_box .titles {
+  -webkit-transform: translate(0, 146px);
+          transform: translate(0, 146px);
+  text-align: center;
+  font-size: large;
+}
+
+.main_box .artist {
+  font-size: 20px;
+}
+
+.buttondiv {
+  position: relative;
+  -webkit-transform: translate(0, 36px);
+          transform: translate(0, 36px);
+}
+
+.buttondiv .delbutton {
+  height: 50px;
+  width: 50px;
+  background: red;
+  border: none;
+  float: left;
+}
+
+.buttondiv .delbutton .delIcon {
+  height: 40px;
+  width: 40px;
+  -webkit-transform: translate(-4px, 0);
+          transform: translate(-4px, 0);
+}
+
+.buttondiv .editbutton {
+  float: right;
+  height: 50px;
+  width: 50px;
+  background: green;
+  border: none;
+}
+
+.buttondiv .editbutton .editIcon {
+  height: 40px;
+  width: 40px;
+  -webkit-transform: translate(-4px, 0);
+          transform: translate(-4px, 0);
+}
+/*# sourceMappingURL=App.css.map */
