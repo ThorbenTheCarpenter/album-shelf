@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchObjects } from "../../Redux/actions/objectActions";
+import { fetchObjects } from "../../../Redux/actions/objectActions";
 
 export default function Details(props) {
   const objects = useSelector(state => state.objects.listOfObjects);
@@ -17,12 +17,15 @@ export default function Details(props) {
         .map(album => (
           <div key={album.id}>
             <h1>{album.artist}</h1>
-            <ul>
+            <h2>{album.title}</h2>
+        <p>{album.description}</p>
+            <ol>
                 {album.tracks.map(
                     track =>
                 <li>{track}</li>
                 )}
-            </ul>
+            </ol>
+            <img src={album.image} alt='No image'/>
           </div>
         ))
         }

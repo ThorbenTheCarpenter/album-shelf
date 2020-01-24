@@ -2,13 +2,15 @@ import React, { useState, useCallback, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { deleteObject } from "../../Redux/actions/objectActions";
 import { useHistory } from "react-router-dom";
-import Details from "./details";
+import Details from "./helpers/details";
 import useModal from "use-react-modal";
 import {
   AiOutlineSetting,
   AiTwotoneDelete,
   AiTwotoneDiff
 } from "react-icons/ai";
+
+
 
 export default function Table(props) {
   const [limit, setLimit] = useState(100);

@@ -5,6 +5,7 @@ import { validationSchema } from "./helpers/validation";
 import { useHistory, useParams } from "react-router-dom";
 import Error from "./helpers/Error";
 import FileUpload from "./helpers/FileUpload";
+import MapList from "./helpers/MapList";
 
 export default function EditForm() {
   const history = useHistory();
@@ -25,7 +26,6 @@ export default function EditForm() {
     <div>
       <Formik
         enableReinitialize
-        
         initialValues={{
           artist: results.artist,
           title: results.title,
@@ -35,9 +35,7 @@ export default function EditForm() {
           track: results.track,
           tracks: results.tracks
         }}
-
         validationSchema={validationSchema}
-
         onSubmit={(values, { setSubmitting }) => {
           setSubmitting(true);
           fetch("http://localhost:3007/albums/" + UserId, {
@@ -66,7 +64,8 @@ export default function EditForm() {
           handleChange,
           handleBlur,
           handleSubmit,
-          isSubmitting
+          isSubmitting,
+          push
         }) => (
           <form onSubmit={handleSubmit}>
             <div>
@@ -145,14 +144,12 @@ export default function EditForm() {
                       onChange={handleChange}
                     />
                     <div>
-                      <ol>
-                        <li>{values.track}</li>
-                      </ol>
                     </div>
                   </div>
                 )}
               </FieldArray>
               <Error touched={touched.tracks} message={errors.tracks} />
+                    <MapList tracks={values.tracks} />
 
               {/* PHOTO */}
 
