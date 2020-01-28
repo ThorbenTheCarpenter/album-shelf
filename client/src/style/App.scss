@@ -5,20 +5,19 @@ body {
 
 //header
 .addDiv {
-.add {
-  height: 80px;
-  width: 80px;
-  transform: translate(-20px, -112px);
-  font-size: 90px;
-  font-weight: bolder;
-  border: none;
-  background: white;
-  float: right;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  cursor: pointer;
+  .add {
+    height: 80px;
+    width: 80px;
+    transform: translate(-20px, -112px);
+    font-size: 90px;
+    font-weight: bolder;
+    border: none;
+    background: white;
+    float: right;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    cursor: pointer;
+  }
 }
-}
-
 
 .search {
   transform: translate(-100px, -65px);
@@ -69,60 +68,6 @@ h1 {
   width: 100%;
   margin-bottom: 0px;
   border-bottom: 2px black solid;
-  // position: absolute;
-}
-
-
-// Object form
-
-.textinput {
-  width: 50%;
-  height: 35px;
-  margin-bottom: 3px;
-  margin-top: 8px;
-  margin-left: 1%;
-  color: rgb(238, 95, 119);
-  cursor: auto;
-  border: black solid 3px;
-  border-radius: 20px;
-  font-size: large;
-  padding: 5px;
-}
-
-textarea {
-  width: 50%;
-  height: 75px;
-  margin-bottom: 3px;
-  margin-top: 8px;
-  margin-left: 1%;
-  color: rgb(238, 95, 119);
-  cursor: auto;
-  border: black solid 3px;
-  font-size: large;
-  border-radius: 20px;
-  padding: 10px;
-}
-
-label {
-  display: table-row;
-  font-size: large;
-}
-
-.submitbutton {
-  margin-left: 5%;
-  margin-top: 5%;
-  height: 50px;
-  width: 120px;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  font-size: large;
-  color: white;
-  border-radius: 20px;
-  border: 0px solid white;
-  background-color: rgb(245, 137, 155);
-  cursor: pointer;
-}
-.submitbutton:hover {
-  background: red;
 }
 
 // vinyl
@@ -201,23 +146,22 @@ $vis: hidden;
   .artist {
     font-size: 20px;
   }
-  
 }
 
 .buttondiv {
   position: relative;
   transform: translate(0, 36px);
 
-  .delbutton{
+  .delbutton {
     height: 50px;
-    width:  50px;
+    width: 50px;
     background: red;
     border: none;
     float: left;
 
-    .delIcon{
+    .delIcon {
       height: 40px;
-      width:  40px;
+      width: 40px;
       transform: translate(-4px, 0);
     }
   }
@@ -225,16 +169,64 @@ $vis: hidden;
   .editbutton {
     float: right;
     height: 50px;
-    width:  50px;
+    width: 50px;
     background: green;
     border: none;
 
-    .editIcon{
+    .editIcon {
       height: 40px;
-      width:  40px;
+      width: 40px;
       transform: translate(-4px, 0);
     }
   }
 }
 
+// Add/Edit forms
 
+.cover_photo {
+  float: left;
+  height: 30%;
+  width: 30%;
+}
+
+.forms {
+  .artist_name {
+    margin-left: 100px;
+  }
+
+  .artist_name_form {
+    border: none;
+    font-size: larger;
+  }
+
+  .title_form {
+    float: right;
+    border: none;
+    font-size: 50px;
+    text-align: center;
+  }
+
+  textarea {
+    border:none;
+  }
+
+  .date_of_release {
+    border:none;
+  }
+
+  .tracks_label {
+  }
+
+  .addTrack_button {
+  }
+
+  .addTrack_form {
+    border:none;
+  }
+
+  .addPhoto_button {
+  }
+
+  .submitbutton {
+  }
+}

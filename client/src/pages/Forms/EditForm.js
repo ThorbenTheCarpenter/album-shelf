@@ -64,29 +64,21 @@ export default function EditForm() {
           handleChange,
           handleBlur,
           handleSubmit,
-          isSubmitting,
-          push
+          isSubmitting
         }) => (
           <form onSubmit={handleSubmit}>
-            <div>
+              
+              
+              <img className='cover_photo' src={values.image} alt="No image" />
+            <div className='forms'>
               <br />
 
-              <label>Artist: </label>
-              <input
-                className="textinput"
-                onBlur={handleBlur}
-                type="text"
-                id="artist"
-                name="artist"
-                value={values.artist}
-                onChange={handleChange}
-              />
-              <Error touched={touched.artist} message={errors.artist} />
 
-              <br />
-              <label>Title: </label>
+              {/* Title */}
+
+
               <input
-                className="textinput"
+                className="title_form "
                 onBlur={handleBlur}
                 type="text"
                 id="title"
@@ -97,7 +89,26 @@ export default function EditForm() {
               <Error touched={touched.title} message={errors.title} />
               <br />
 
-              <label>Description: </label>
+              {/* Artist name */}
+
+              <div className='artist_name'>
+              <input
+                className="artist_name_form"
+                onBlur={handleBlur}
+                type="text"
+                id="artist"
+                name="artist"
+                value={values.artist}
+                onChange={handleChange}
+              />
+              <Error touched={touched.artist} message={errors.artist} />
+              <br />
+              
+              </div>
+
+
+              {/* Description */}
+
               <textarea
                 name="description"
                 id="description"
@@ -111,9 +122,11 @@ export default function EditForm() {
               />
               <br />
 
-              <label>Year: </label>
+              {/* Year of release */}
+
               <input
-                className="textinput"
+                className="date_of_release"
+                placeholder="Date of album's release"
                 id="year"
                 name="year"
                 type="text"
@@ -122,9 +135,10 @@ export default function EditForm() {
               />
               <Error touched={touched.year} message={errors.year} />
 
-              <label>Tracks: </label>
+              {/* Tracks */}
+
+              <label className="tracks_label">Tracks: </label>
               <FieldArray
-                className="textinput"
                 id="tracks"
                 name="tracks"
                 type="text"
@@ -133,44 +147,49 @@ export default function EditForm() {
               >
                 {({ push }) => (
                   <div>
-                    <button type="button" onClick={() => push(values.track)}>
+                    <button
+                      className="addTrack_button"
+                      type="button"
+                      onClick={() => push(values.track)}
+                    >
                       Add
                     </button>
                     <input
+                      className='addTrack_form'
                       type="text"
                       id="track"
                       name="track"
                       values={values.track}
                       onChange={handleChange}
                     />
-                    <div>
-                    </div>
                   </div>
                 )}
               </FieldArray>
               <Error touched={touched.tracks} message={errors.tracks} />
-                    <MapList tracks={values.tracks} />
+              <MapList tracks={values.tracks} />
 
               {/* PHOTO */}
 
               <>
                 <div>
                   <input
+                    className="addPhoto_button"
                     type="file"
                     name="image"
                     id="image"
                     accept="image/*"
                     onChange={onchangeUpload}
                   />
-                  <label htmlFor="image">{filename}</label>
                   {uploaded ? (
                     <div>Cover uploaded!</div>
-                  ) : (
-                    <div>Upload a Cover!</div>
+                    ) : (
+                      <div>Upload a Cover!</div>
                   )}
                 </div>
               </>
               <br />
+
+              {/* Submit button */}
 
               <button
                 className="submitbutton"

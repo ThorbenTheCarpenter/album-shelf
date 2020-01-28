@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Formik, FieldArray } from "formik";
 import { validationSchema } from "./helpers/validation";
 import { useHistory } from "react-router-dom";
@@ -150,7 +150,6 @@ export default function AddForm() {
 
               {/* PHOTO */}
 
-              <>
                 <div>
                   <input
                     type="file"
@@ -159,14 +158,12 @@ export default function AddForm() {
                     accept="image/*"
                     onChange={onchangeUpload}
                   />
-                  <label htmlFor="image">{filename}</label>
                   {uploaded ? (
                     <div>Cover uploaded!</div>
                   ) : (
                     <div>Upload a Cover!</div>
                   )}
                 </div>
-              </>
               <br />
 
               <button

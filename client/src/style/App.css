@@ -71,57 +71,6 @@ h1 {
   border-bottom: 2px black solid;
 }
 
-.textinput {
-  width: 50%;
-  height: 35px;
-  margin-bottom: 3px;
-  margin-top: 8px;
-  margin-left: 1%;
-  color: #ee5f77;
-  cursor: auto;
-  border: black solid 3px;
-  border-radius: 20px;
-  font-size: large;
-  padding: 5px;
-}
-
-textarea {
-  width: 50%;
-  height: 75px;
-  margin-bottom: 3px;
-  margin-top: 8px;
-  margin-left: 1%;
-  color: #ee5f77;
-  cursor: auto;
-  border: black solid 3px;
-  font-size: large;
-  border-radius: 20px;
-  padding: 10px;
-}
-
-label {
-  display: table-row;
-  font-size: large;
-}
-
-.submitbutton {
-  margin-left: 5%;
-  margin-top: 5%;
-  height: 50px;
-  width: 120px;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  font-size: large;
-  color: white;
-  border-radius: 20px;
-  border: 0px solid white;
-  background-color: #f5899b;
-  cursor: pointer;
-}
-
-.submitbutton:hover {
-  background: red;
-}
-
 .main_box {
   margin: 50px 0px 170px 55px;
   position: relative;
@@ -234,5 +183,39 @@ label {
   width: 40px;
   -webkit-transform: translate(-4px, 0);
           transform: translate(-4px, 0);
+}
+
+.cover_photo {
+  float: left;
+  height: 30%;
+  width: 30%;
+}
+
+.forms .artist_name {
+  margin-left: 100px;
+}
+
+.forms .artist_name_form {
+  border: none;
+  font-size: larger;
+}
+
+.forms .title_form {
+  float: right;
+  border: none;
+  font-size: 50px;
+  text-align: center;
+}
+
+.forms textarea {
+  border: none;
+}
+
+.forms .date_of_release {
+  border: none;
+}
+
+.forms .addTrack_form {
+  border: none;
 }
 /*# sourceMappingURL=App.css.map */
