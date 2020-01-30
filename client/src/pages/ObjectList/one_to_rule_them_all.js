@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchObjects, deleteObject } from "../../Redux/actions/objectActions";
+import { fetchObjects } from "../../Redux/actions/objectActions";
 import Table from "./singleObject";
 import Header from "../Header/header";
 
@@ -19,10 +19,11 @@ export default function ObjectList() {
 
   // Escape listener
   const handleUserKeyPress = useCallback(event => {
-    const { key, keyCode } = event;
+    const { keyCode } = event;
 
     if (keyCode === 27) {
       setsearchState(true);
+      setSearch("");
     }
   }, []);
 

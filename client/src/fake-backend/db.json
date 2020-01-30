@@ -3,31 +3,29 @@
     {
       "artist": "Billy Joel",
       "title": "The Stranger",
-      "image": "/uploads/Choose File",
+      "image": "/uploads/billy-joel-the-stranger-vinyl-lp-album.jpg",
       "tracks": [
         "sfafaf"
       ],
       "id": 1
     },
     {
-      "artist": "Elton John",
-      "title": "Madman Across the Water",
-      "description": "la la laaaaaaaaaaa",
-      "image": "https://ecsmedia.pl/c/madman-across-the-water-w-iext46069913.jpg",
-      "year": "1980",
-      "tracks": [
-        "Daniel ",
-        "Madman Across The Water "
-      ],
-      "id": 2
-    },
-    {
       "artist": "Ozzy Osbourne",
       "title": "Blizzard of Ozz",
       "description": "",
       "image": "/uploads/small_ozzy-osbourne-Blizzard-ofOzz_3573.jpg",
+      "year": "1980",
       "tracks": [
-        ""
+        "I don't know",
+        "Crazy train",
+        "Goodbye to Romance",
+        "Dee",
+        "Suicide Solution",
+        "Mr Crowley",
+        "No Bone Movies",
+        "Revelation (Mother Earth)",
+        "Steal Away (The Night)",
+        "You Looking at Me, Looking at you"
       ],
       "id": 3
     },
@@ -59,6 +57,15 @@
       "year": "",
       "tracks": [],
       "id": 6
+    },
+    {
+      "artist": "Leonard Cohen",
+      "title": "New Skin for the Old Ceremony",
+      "description": "",
+      "image": "/uploads/new-skin-for-the-old-ceremony-b-iext43234659.jpg",
+      "year": "",
+      "tracks": [],
+      "id": 7
     }
   ]
 }

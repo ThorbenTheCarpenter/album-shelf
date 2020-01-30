@@ -187,17 +187,21 @@ h1 {
 
 .cover_photo {
   float: left;
-  height: 30%;
-  width: 30%;
-}
-
-.forms .artist_name {
-  margin-left: 100px;
+  margin-top: 30px;
+  height: 40%;
+  width: 40%;
 }
 
 .forms .artist_name_form {
   border: none;
-  font-size: larger;
+  font-size: 30px;
+  float: right;
+  -webkit-transform: translate(-100px);
+          transform: translate(-100px);
+  background-color: #e2dddd;
+  height: 60px;
+  text-align: center;
+  border-radius: 50px;
 }
 
 .forms .title_form {
@@ -205,17 +209,123 @@ h1 {
   border: none;
   font-size: 50px;
   text-align: center;
+  background-color: #e2dddd;
+  border-radius: 50px;
 }
 
 .forms textarea {
   border: none;
+  float: right;
+  background-color: #e2dddd;
+  text-align: center;
 }
 
 .forms .date_of_release {
-  border: none;
+  border: 0 white none;
+  background-color: #e2dddd;
+  text-align: center;
+  border-radius: 20px;
+  float: left;
+  position: relative;
 }
 
 .forms .addTrack_form {
   border: none;
+  background-color: #e2dddd;
+}
+
+.forms .submitbutton {
+  border-radius: 50%;
+  margin-right: 10px;
+  height: 40px;
+  width: 40px;
+  display: inline;
+  border: none;
+  cursor: pointer;
+  -webkit-transform: translate(220px, 150px);
+          transform: translate(220px, 150px);
+}
+
+.forms .submitbutton:hover {
+  background: #6b6a6a;
+}
+
+.forms .submitIcon {
+  height: 40px;
+  width: 40px;
+  -webkit-transform: translate(-10px, 0);
+          transform: translate(-10px, 0);
+}
+
+.forms .backIcon {
+  height: 25px;
+  width: 25px;
+  -webkit-transform: translate(-3px, 0);
+          transform: translate(-3px, 0);
+}
+
+.forms .submitbuttons {
+  float: right;
+  -webkit-transform: translate(0, 250px);
+          transform: translate(0, 250px);
+}
+
+.popup {
+  position: fixed;
+  width: 90%;
+  height: 85%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background: rgba(0, 0, 0, 0.5);
+  border: grey 4px solid;
+}
+
+.popup\_inner {
+  position: absolute;
+  left: 25%;
+  right: 25%;
+  top: 25%;
+  bottom: 25%;
+  margin: auto;
+  border-radius: 20px;
+  background: white;
+}
+
+.artist_popup {
+  color: white;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.title_popup {
+  color: white;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.trackListPopup {
+  display: inline-block;
+  color: white;
+  margin-left: 100px;
+  margin-top: 60px;
+  font-size: 20px;
+  position: absolute;
+}
+
+.image_popup {
+  margin-left: 50px;
+  height: 30%;
+  width: 30%;
+}
+
+.year_popup {
+  color: white;
+  font-size: 30px;
+  margin: 3px;
+  margin-left: 20px;
+  position: absolute;
 }
 /*# sourceMappingURL=App.css.map */

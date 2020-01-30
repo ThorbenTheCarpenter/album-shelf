@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useDispatch } from "react-redux";
 import { deleteObject } from "../../Redux/actions/objectActions";
 import { useHistory } from "react-router-dom";
@@ -10,32 +10,13 @@ import {
   AiTwotoneDiff
 } from "react-icons/ai";
 
-
-
 export default function Table(props) {
-  const [limit, setLimit] = useState(100);
   const dispatch = useDispatch();
   const [ID, setID] = useState();
-  const { isOpen, openModal, closeModal, Modal } = useModal();
+  const [isOpen, setIsOpen] = useState(false)
   const [editMode, setEditMode] = useState(false);
 
   const history = useHistory();
-
-  // Escape listener
-  const handleUserKeyPress = useCallback(event => {
-    const { key, keyCode } = event;
-
-    if (keyCode === 27) {
-      setEditMode(false);
-    }
-  }, []);
-
-  useEffect(() => {
-    window.addEventListener("keydown", handleUserKeyPress);
-    return () => {
-      window.removeEventListener("keydown", handleUserKeyPress);
-    };
-  }, [handleUserKeyPress]);
 
   // Edit Object
 
@@ -43,6 +24,22 @@ export default function Table(props) {
     history.push("/editObj/" + id);
   };
 
+ // Escape listener
+ const handleUserKeyPress = useCallback(event => {
+  const { keyCode } = event;
+
+  if (keyCode === 27) {
+    setEditMode(false);
+    setIsOpen(false);
+  }
+}, []);
+
+useEffect(() => {
+  window.addEventListener("keydown", handleUserKeyPress);
+  return () => {
+    window.removeEventListener("keydown", handleUserKeyPress);
+  };
+}, [handleUserKeyPress]);
   // Delete Object
 
   const removebject = (album, id) => {
@@ -58,15 +55,9 @@ export default function Table(props) {
 
   // handleClick
 
-  const handleClick = (e, number) => {
+  const handleClick = (number) => {
     setID(number);
-    openModal(e);
-  };
-
-  // handling number of shown products
-
-  const chooseAmount = e => {
-    setLimit(e.target.value);
+    setIsOpen(true);
   };
 
   return (
@@ -80,9 +71,9 @@ export default function Table(props) {
 
       {/* Mapping */}
 
-      {props.data.slice(0, limit).map(row => (
+      {props.data.map(row => (
         <div
-          onClick={e => handleClick(e, row.id)}
+          onClick={() => handleClick(row.id)}
           className="main_box"
           key={row.id}
         >
@@ -123,15 +114,11 @@ export default function Table(props) {
 
           {/* MODAL */}
 
-          {isOpen && (
-            <Modal>
-              <button onClick={e => closeModal(e)}>close</button>
+          {isOpen ? (
               <Details id={ID} />
-            </Modal>
-          )}
+          ): null }
         </div>
       ))}
-      {/* Show on the page: <Select chooseAmount={chooseAmount} /> */}
     </div>
   );
 }

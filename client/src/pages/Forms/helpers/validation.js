@@ -5,7 +5,7 @@ export const validationSchema =
     artist: Yup.string()
         .required("Put the artist name"),
     title: Yup.string()
-        .required("Enter your name, please!"),
+        .required("Enter the album's title"),
     year: Yup.number()
         .min(4, "Enter full year")
     ,

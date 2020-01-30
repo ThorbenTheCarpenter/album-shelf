@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { FaSearch } from "react-icons/fa";
 import { useHistory } from "react-router-dom";
 import SearchBar from "./searchBar";

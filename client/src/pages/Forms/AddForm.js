@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Formik, FieldArray } from "formik";
 import { validationSchema } from "./helpers/validation";
 import { useHistory } from "react-router-dom";
@@ -8,17 +8,10 @@ import FileUpload from "./helpers/FileUpload";
 export default function AddForm() {
   const history = useHistory();
 
-  const {
-    onSubmitUpload,
-    onchangeUpload,
-    file,
-    filename,
-    uploaded,
-    uploadedFile
-  } = FileUpload();
+  const { onSubmitUpload, onchangeUpload, filename, uploaded } = FileUpload();
 
   return (
-    <div>
+    <div className="forms">
       <Formik
         initialValues={{
           artist: "",
@@ -66,7 +59,7 @@ export default function AddForm() {
 
               <label>Artist: </label>
               <input
-                className="textinput"
+                className="artist_name_form"
                 onBlur={handleBlur}
                 type="text"
                 id="artist"
@@ -80,7 +73,8 @@ export default function AddForm() {
 
               <label>Title: </label>
               <input
-                className="textinput"
+                className="title_form"
+                placeholder="Album's title"
                 onBlur={handleBlur}
                 type="text"
                 id="title"
@@ -108,7 +102,8 @@ export default function AddForm() {
 
               <label>Year: </label>
               <input
-                className="textinput"
+                className="date_of_release"
+                placeholder="Date of album's release"
                 id="year"
                 name="year"
                 type="text"
@@ -128,10 +123,15 @@ export default function AddForm() {
               >
                 {({ push }) => (
                   <div>
-                    <button type="button" onClick={() => push(values.track)}>
+                    <button
+                      className="addTrack_button"
+                      type="button"
+                      onClick={() => push(values.track)}
+                    >
                       Add
                     </button>
                     <input
+                      className="addTrack_form"
                       type="text"
                       id="track"
                       name="track"
@@ -150,20 +150,21 @@ export default function AddForm() {
 
               {/* PHOTO */}
 
-                <div>
-                  <input
-                    type="file"
-                    name="image"
-                    id="image"
-                    accept="image/*"
-                    onChange={onchangeUpload}
-                  />
-                  {uploaded ? (
-                    <div>Cover uploaded!</div>
-                  ) : (
-                    <div>Upload a Cover!</div>
-                  )}
-                </div>
+              <div>
+                <input
+                  className="addPhoto_button"
+                  type="file"
+                  name="image"
+                  id="image"
+                  accept="image/*"
+                  onChange={onchangeUpload}
+                />
+                {uploaded ? (
+                  <div>Cover uploaded!</div>
+                ) : (
+                  <div>Upload a Cover!</div>
+                )}
+              </div>
               <br />
 
               <button
@@ -174,7 +175,13 @@ export default function AddForm() {
                 Submit!
               </button>
 
-              {/* <button className='submitbutton' onClick={<Redirect to='/' />}> Go back! </button> */}
+              <button
+                className="submitbutton"
+                onClick={() => history.push("/")}
+              >
+                {" "}
+                Go back!{" "}
+              </button>
             </div>
           </form>
         )}

@@ -6,11 +6,13 @@ import { useHistory, useParams } from "react-router-dom";
 import Error from "./helpers/Error";
 import FileUpload from "./helpers/FileUpload";
 import MapList from "./helpers/MapList";
+import { IoIosArrowBack, IoIosCheckmark } from "react-icons/io";
 
 export default function EditForm() {
   const history = useHistory();
   const UserId = parseInt(useParams().id);
   const [results, setResults] = useState("");
+  const [showTracks, setShowTracks] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -18,7 +20,7 @@ export default function EditForm() {
       setResults(result.data);
     };
     fetchData();
-  }, []);
+  }, [UserId, results.image]);
 
   const { onSubmitUpload, onchangeUpload, filename, uploaded } = FileUpload();
 
@@ -48,7 +50,7 @@ export default function EditForm() {
               artist: values.artist,
               title: values.title,
               description: values.description,
-              image: "/uploads/" + filename,
+              image: values.image,
               year: values.year,
               tracks: values.tracks
             })
@@ -67,34 +69,18 @@ export default function EditForm() {
           isSubmitting
         }) => (
           <form onSubmit={handleSubmit}>
-              
-              
-              <img className='cover_photo' src={values.image} alt="No image" />
-            <div className='forms'>
-              <br />
-
-
-              {/* Title */}
-
-
-              <input
-                className="title_form "
-                onBlur={handleBlur}
-                type="text"
-                id="title"
-                name="title"
-                value={values.title}
-                onChange={handleChange}
+            <div className="forms">
+              <img
+                className="cover_photo"
+                src={uploaded ? values.image : results.image}
+                alt="No File"
               />
-              <Error touched={touched.title} message={errors.title} />
               <br />
-
               {/* Artist name */}
-
-              <div className='artist_name'>
               <input
                 className="artist_name_form"
                 onBlur={handleBlur}
+                placeholder="Artist's name"
                 type="text"
                 id="artist"
                 name="artist"
@@ -103,15 +89,29 @@ export default function EditForm() {
               />
               <Error touched={touched.artist} message={errors.artist} />
               <br />
-              
-              </div>
-
-
+              <br />
+              <br />
+              {/* Title */}
+              <input
+                className="title_form"
+                onBlur={handleBlur}
+                placeholder="Album's title"
+                type="text"
+                id="title"
+                name="title"
+                value={values.title}
+                onChange={handleChange}
+              />
+              <Error touched={touched.title} message={errors.title} />
+              <br />
+              <br />
+              <br />
+              <br />
               {/* Description */}
-
               <textarea
                 name="description"
                 id="description"
+                placeholder="Album's description"
                 onBlur={handleBlur}
                 value={values.description}
                 onChange={handleChange}
@@ -121,9 +121,7 @@ export default function EditForm() {
                 message={errors.description}
               />
               <br />
-
               {/* Year of release */}
-
               <input
                 className="date_of_release"
                 placeholder="Date of album's release"
@@ -134,42 +132,63 @@ export default function EditForm() {
                 onChange={handleChange}
               />
               <Error touched={touched.year} message={errors.year} />
+              {/* Submit button */}
+              <div className="submitbuttons">
+                <button
+                  className="submitbutton"
+                  onClick={() => history.push("/")}
+                >
+                  <IoIosArrowBack className="backIcon" />
+                </button>
 
+                <button
+                  className="submitbutton"
+                  type="submit"
+                  disabled={isSubmitting}
+                >
+                  <IoIosCheckmark className="submitIcon" />
+                </button>
+              </div>
               {/* Tracks */}
-
-              <label className="tracks_label">Tracks: </label>
-              <FieldArray
-                id="tracks"
-                name="tracks"
-                type="text"
-                value={values.tracks}
-                onChange={handleChange}
-              >
-                {({ push }) => (
-                  <div>
-                    <button
-                      className="addTrack_button"
-                      type="button"
-                      onClick={() => push(values.track)}
-                    >
-                      Add
-                    </button>
-                    <input
-                      className='addTrack_form'
-                      type="text"
-                      id="track"
-                      name="track"
-                      values={values.track}
-                      onChange={handleChange}
-                    />
-                  </div>
-                )}
-              </FieldArray>
-              <Error touched={touched.tracks} message={errors.tracks} />
-              <MapList tracks={values.tracks} />
-
-              {/* PHOTO */}
-
+              <button type="button" onClick={() => setShowTracks(!showTracks)}>
+                Show Tracks
+              </button>
+              {showTracks ? (
+                <div className="tracks_div">
+                  <label className="tracks_label">Tracks: </label>
+                  <FieldArray
+                    id="tracks"
+                    name="tracks"
+                    type="text"
+                    value={values.tracks}
+                    onChange={handleChange}
+                  >
+                    {({ push }) => (
+                      <div>
+                        <button
+                          className="addTrack_button"
+                          type="reset"
+                          onClick={() => push(values.track)}
+                        >
+                          Add
+                        </button>
+                        <input
+                          className="addTrack_form"
+                          placeholder="Track's name"
+                          type="text"
+                          id="track"
+                          name="track"
+                          values={values.track}
+                          onChange={handleChange}
+                        />
+                      </div>
+                    )}
+                  </FieldArray>
+                  <Error touched={touched.tracks} message={errors.tracks} />
+                  <MapList id={UserId} />
+                </div>
+              ) : null}
+              ;{/* PHOTO */}
               <>
                 <div>
                   <input
@@ -180,26 +199,14 @@ export default function EditForm() {
                     accept="image/*"
                     onChange={onchangeUpload}
                   />
-                  {uploaded ? (
-                    <div>Cover uploaded!</div>
-                    ) : (
-                      <div>Upload a Cover!</div>
-                  )}
+                  {uploaded
+                    ? (values.image = "/uploads/" + filename)
+                    : (values.image = results.image)}
+                  <br />
+                  {values.image}
                 </div>
               </>
               <br />
-
-              {/* Submit button */}
-
-              <button
-                className="submitbutton"
-                type="submit"
-                disabled={isSubmitting}
-              >
-                Submit!
-              </button>
-
-              {/* <button className='submitbutton' onClick={<Redirect to='/' />}> Go back! </button> */}
             </div>
           </form>
         )}

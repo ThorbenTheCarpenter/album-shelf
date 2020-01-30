@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 
 const FileUpload = () => {
   const [file, setFile] = useState("");
-  const [filename, setFilename] = useState("Choose File");
+  const [filename, setFilename] = useState("");
   const [uploadedFile, setUploadedFile] = useState({});
   const [uploaded, setUploaded] = useState(false);
 
@@ -12,10 +12,11 @@ const FileUpload = () => {
     var fileName = e.target.files[0].name;
     var idxDot = fileName.lastIndexOf(".") + 1;
     var extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
-    if (extFile == "jpg" || extFile == "jpeg" || extFile == "png") {
+    if (extFile === "jpg" || extFile === "jpeg" || extFile === "png") {
       setFile(e.target.files[0]);
       setFilename(e.target.files[0].name.replace(/\s/g, ""));
       setUploaded(true);
+      console.log(filename)
     } else {
       alert("Only jpg/jpeg and png files are allowed!");
     }
