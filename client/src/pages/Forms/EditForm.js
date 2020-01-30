@@ -156,7 +156,7 @@ export default function EditForm(props) {
                         <button
                           className="addTrack_button"
                           type="reset"
-                          onClick={() => push(values.track)}
+                          onClick={() => push(values.track)} 
                         >
                           Add
                         </button>
