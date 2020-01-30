@@ -8,9 +8,9 @@ import FileUpload from "./helpers/FileUpload";
 import MapList from "./helpers/MapList";
 import { IoIosArrowBack, IoIosCheckmark } from "react-icons/io";
 
-export default function EditForm() {
+export default function EditForm(props) {
   const history = useHistory();
-  const UserId = parseInt(useParams().id);
+  const UserId = props.id;
   const [results, setResults] = useState("");
   const [showTracks, setShowTracks] = useState(false);
 
@@ -20,7 +20,7 @@ export default function EditForm() {
       setResults(result.data);
     };
     fetchData();
-  }, [UserId, results.image]);
+  }, []);
 
   const { onSubmitUpload, onchangeUpload, filename, uploaded } = FileUpload();
 
@@ -31,7 +31,6 @@ export default function EditForm() {
         initialValues={{
           artist: results.artist,
           title: results.title,
-          description: results.description,
           year: results.date,
           image: results.image,
           track: results.track,
@@ -40,7 +39,7 @@ export default function EditForm() {
         validationSchema={validationSchema}
         onSubmit={(values, { setSubmitting }) => {
           setSubmitting(true);
-          fetch("http://localhost:3007/albums/" + UserId, {
+          fetch("http://localhost:3007/albums/" + results.id, {
             method: "PUT",
             headers: {
               Accept: "application/json",
@@ -52,6 +51,7 @@ export default function EditForm() {
               description: values.description,
               image: values.image,
               year: values.year,
+              track: values.track,
               tracks: values.tracks
             })
           });
@@ -76,6 +76,23 @@ export default function EditForm() {
                 alt="No File"
               />
               <br />
+               {/* Submit button */}
+               <div className="submitbuttons">
+                <button
+                  className="submitbutton"
+                  onClick={() => history.push("/")}
+                >
+                  <IoIosArrowBack className="backIcon" />
+                </button>
+
+                <button
+                  className="submitbutton"
+                  type="submit"
+                  disabled={isSubmitting}
+                >
+                  <IoIosCheckmark className="submitIcon" />
+                </button>
+              </div>
               {/* Artist name */}
               <input
                 className="artist_name_form"
@@ -107,24 +124,11 @@ export default function EditForm() {
               <br />
               <br />
               <br />
-              {/* Description */}
-              <textarea
-                name="description"
-                id="description"
-                placeholder="Album's description"
-                onBlur={handleBlur}
-                value={values.description}
-                onChange={handleChange}
-              />
-              <Error
-                touched={touched.description}
-                message={errors.description}
-              />
               <br />
               {/* Year of release */}
               <input
                 className="date_of_release"
-                placeholder="Date of album's release"
+                placeholder="Year of album's release"
                 id="year"
                 name="year"
                 type="text"
@@ -132,23 +136,7 @@ export default function EditForm() {
                 onChange={handleChange}
               />
               <Error touched={touched.year} message={errors.year} />
-              {/* Submit button */}
-              <div className="submitbuttons">
-                <button
-                  className="submitbutton"
-                  onClick={() => history.push("/")}
-                >
-                  <IoIosArrowBack className="backIcon" />
-                </button>
-
-                <button
-                  className="submitbutton"
-                  type="submit"
-                  disabled={isSubmitting}
-                >
-                  <IoIosCheckmark className="submitIcon" />
-                </button>
-              </div>
+            
               {/* Tracks */}
               <button type="button" onClick={() => setShowTracks(!showTracks)}>
                 Show Tracks
@@ -185,7 +173,7 @@ export default function EditForm() {
                     )}
                   </FieldArray>
                   <Error touched={touched.tracks} message={errors.tracks} />
-                  <MapList id={UserId} />
+                  <MapList id={results.id} />
                 </div>
               ) : null}
               ;{/* PHOTO */}

@@ -1,71 +1,28 @@
 {
   "albums": [
     {
-      "artist": "Billy Joel",
-      "title": "The Stranger",
-      "image": "/uploads/billy-joel-the-stranger-vinyl-lp-album.jpg",
+      "artist": "Ozzy Osbourne",
+      "title": "Blizzard of Ozz",
+      "image": "/uploads/small_ozzy-osbourne-Blizzard-ofOzz_3573.jpg",
+      "track": "Goodbye to Romance",
       "tracks": [
-        "sfafaf"
+        "I don't Know",
+        "Crazy Train",
+        "Goodbye to Romance"
       ],
       "id": 1
     },
     {
-      "artist": "Ozzy Osbourne",
-      "title": "Blizzard of Ozz",
-      "description": "",
-      "image": "/uploads/small_ozzy-osbourne-Blizzard-ofOzz_3573.jpg",
-      "year": "1980",
+      "artist": "Elton John",
+      "title": "Madman Across The Water",
+      "image": "/uploads/i-elton-john-goodbye-yellow-brick-road-remaster-cd.jpg",
+      "year": "1973",
+      "track": "Madman Across The Water",
       "tracks": [
-        "I don't know",
-        "Crazy train",
-        "Goodbye to Romance",
-        "Dee",
-        "Suicide Solution",
-        "Mr Crowley",
-        "No Bone Movies",
-        "Revelation (Mother Earth)",
-        "Steal Away (The Night)",
-        "You Looking at Me, Looking at you"
+        "Daniel",
+        "Madman Across The Water"
       ],
-      "id": 3
-    },
-    {
-      "artist": "Pink Floyd",
-      "title": "The Wall",
-      "description": "Pinky!",
-      "image": "https://ecsmedia.pl/c/the-wall-w-iext47067868.jpg",
-      "year": "1977",
-      "tracks": [
-        ""
-      ],
-      "id": 4
-    },
-    {
-      "artist": "Ozzy Osbourne",
-      "title": "Bark at the Moon",
-      "description": "",
-      "image": "/uploads/3.BarkattheMoon.jpg",
-      "year": "",
-      "tracks": [],
-      "id": 5
-    },
-    {
-      "artist": "Judas Priest",
-      "title": "Screaming for Vengance",
-      "description": "",
-      "image": "/uploads/i-judas-priest-screaming-for-vengeance-winyl.jpg",
-      "year": "",
-      "tracks": [],
-      "id": 6
-    },
-    {
-      "artist": "Leonard Cohen",
-      "title": "New Skin for the Old Ceremony",
-      "description": "",
-      "image": "/uploads/new-skin-for-the-old-ceremony-b-iext43234659.jpg",
-      "year": "",
-      "tracks": [],
-      "id": 7
+      "id": 2
     }
   ]
 }

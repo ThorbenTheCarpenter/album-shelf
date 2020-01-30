@@ -80,7 +80,7 @@ $vis: hidden;
 .main_box {
   // t r b l
   margin: 50px 0px 170px 55px;
-  position: relative;
+  // position: relative;
   display: inline-block;
 
   .vinyl {
@@ -93,22 +93,8 @@ $vis: hidden;
     transition: transform 0.2s ease-in-out;
   }
 
-  .infobutton {
-    visibility: hidden;
-  }
-
   .vinyl:hover {
     transform: translate3d(0, -100px, 0px);
-    .infobutton {
-      margin: 0 auto;
-      position: relative;
-      top: 35%;
-      left: 35%;
-      border-radius: 50%;
-      height: $button;
-      width: $button;
-      visibility: visible;
-    }
   }
 
   .middle_circle {
@@ -130,6 +116,7 @@ $vis: hidden;
     font-size: 70px;
     text-align: center;
     font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    cursor: pointer;
 
     .album_image {
       cursor: pointer;
@@ -191,7 +178,6 @@ $vis: hidden;
 }
 
 .forms {
-
   .artist_name_form {
     border: none;
     font-size: 30px;
@@ -271,34 +257,36 @@ $vis: hidden;
 
   .submitbuttons {
     float: right;
-    transform: translate(0, 250px);
+    // transform: translate(0, 250px);
+    position: absolute;
   }
 }
 
 // MODAL
 
-
-.popup {  
-  position: fixed;  
-  width: 90%;  
-  height: 85%;  
-  top: 0;  
-  left: 0;  
-  right: 0;  
-  bottom: 0;  
-  margin: auto;  
-  background: rgba(0,0,0, 0.5);  
+.popup {
+  position: fixed;
+  width: 90%;
+  height: 85%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background: rgba(0, 0, 0, 0.5);
   border: grey 4px solid;
-}  
-.popup\_inner {  
-  position: absolute;  
-  left: 25%;  
-  right: 25%;  
-  top: 25%;  
-  bottom: 25%;  
-  margin: auto;  
-  border-radius: 20px;  
-  background: white;  
+  z-index: 25;
+}
+.popup\_inner {
+  position: absolute;
+  z-index: 26;
+  left: 25%;
+  right: 25%;
+  top: 25%;
+  bottom: 25%;
+  margin: auto;
+  border-radius: 20px;
+  background: white;
 }
 
 .artist_popup {
@@ -322,7 +310,7 @@ $vis: hidden;
   position: absolute;
 }
 
-.image_popup{
+.image_popup {
   margin-left: 50px;
   height: 30%;
   width: 30%;
@@ -335,3 +323,4 @@ $vis: hidden;
   margin-left: 20px;
   position: absolute;
 }
+  

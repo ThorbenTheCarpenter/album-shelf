@@ -16,7 +16,6 @@ export default function AddForm() {
         initialValues={{
           artist: "",
           title: "",
-          description: "",
           year: "",
           image: "",
           track: "",
@@ -34,7 +33,6 @@ export default function AddForm() {
             body: JSON.stringify({
               artist: values.artist,
               title: values.title,
-              description: values.description,
               image: "/uploads/" + filename,
               year: values.year,
               tracks: values.tracks
@@ -84,20 +82,6 @@ export default function AddForm() {
               />
               <Error touched={touched.title} message={errors.title} />
 
-              <br />
-
-              <label>Description: </label>
-              <textarea
-                name="description"
-                id="description"
-                onBlur={handleBlur}
-                value={values.description}
-                onChange={handleChange}
-              />
-              <Error
-                touched={touched.description}
-                message={errors.description}
-              />
               <br />
 
               <label>Year: </label>

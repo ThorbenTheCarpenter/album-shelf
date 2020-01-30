@@ -23,7 +23,7 @@ export default function Details(props) {
             <ol className="trackListPopup">
                 {album.tracks.map(
                     track =>
-                <li>{track}</li>
+                <li key={track.id}>{track}</li>
                 )}
             </ol>
           </div>

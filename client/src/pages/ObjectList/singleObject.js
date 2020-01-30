@@ -3,18 +3,19 @@ import { useDispatch } from "react-redux";
 import { deleteObject } from "../../Redux/actions/objectActions";
 import { useHistory } from "react-router-dom";
 import Details from "./helpers/details";
-import useModal from "use-react-modal";
 import {
   AiOutlineSetting,
   AiTwotoneDelete,
   AiTwotoneDiff
 } from "react-icons/ai";
+import ShowEdit from "./helpers/ShowEdit";
 
 export default function Table(props) {
   const dispatch = useDispatch();
   const [ID, setID] = useState();
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState("closed")
   const [editMode, setEditMode] = useState(false);
+  const [editPopUp, setEditPopUp] = useState("closed")
 
   const history = useHistory();
 
@@ -30,7 +31,8 @@ export default function Table(props) {
 
   if (keyCode === 27) {
     setEditMode(false);
-    setIsOpen(false);
+    setIsOpen('closed');
+    setEditPopUp('closed');
   }
 }, []);
 
@@ -57,7 +59,7 @@ useEffect(() => {
 
   const handleClick = (number) => {
     setID(number);
-    setIsOpen(true);
+    setIsOpen('open');
   };
 
   return (
@@ -101,10 +103,12 @@ useEffect(() => {
               >
                 <AiTwotoneDelete className="delIcon" />
               </button>
+
+
               <button
                 className="editbutton"
                 onClick={() => {
-                  editObject(row.id);
+                  setEditPopUp('open')
                 }}
               >
                 <AiTwotoneDiff className="editIcon" />
@@ -112,9 +116,14 @@ useEffect(() => {
             </div>
           ) : null}
 
-          {/* MODAL */}
+          {/* POPUP */}
 
-          {isOpen ? (
+          {editPopUp === "open" ? (
+            <ShowEdit id={ID} />
+          )
+        : null
+        }
+          {isOpen === "open" && editMode === false ? (
               <Details id={ID} />
           ): null }
         </div>
